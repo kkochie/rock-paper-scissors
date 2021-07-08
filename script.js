@@ -7,9 +7,8 @@ function computerPlay() {
    return array[Math.floor(Math.random() * array.length)];
 }
 
-playerSelection = prompt("Rock? Paper? Scissors?").toLowerCase();
-
 function playRound(computerSelection,playerSelection) {
+    playerSelection = prompt("Rock? Paper? Scissors?").toLowerCase();
     computerSelection = computerPlay();
     if (computerSelection == playerSelection) {
         return("Tie!");
@@ -26,7 +25,12 @@ function playRound(computerSelection,playerSelection) {
 
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
-  }
+}
+
+for (var i = 0; i < 5; i++) {
+    console.log(playRound(computerSelection, playerSelection));
+}
 
 
-console.log(playRound(computerSelection, playerSelection));
+
+
