@@ -1,11 +1,7 @@
 let playerSelection;
 let computerSelection;
 
-const array = [
-    'rock', 
-    'paper', 
-    'scissors'
-];
+const array = ['rock', 'paper', 'scissors'];
 
 function computerPlay() {
    return array[Math.floor(Math.random() * array.length)];
@@ -22,10 +18,15 @@ function playRound(computerSelection,playerSelection) {
         (computerSelection == "scissors" && playerSelection == "paper") ||
         (computerSelection == "paper" && playerSelection == "rock")
       ) {
-          return ("You lose!");
+          return (`You lose! ${capitalize(computerSelection)} beats ${playerSelection}.`);
     } else {
-        return ("You win!");
+        return (`You win! ${capitalize(playerSelection)} beats ${computerSelection}.`);
     }
 }   
+
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
 
 console.log(playRound(computerSelection, playerSelection));
